@@ -1,0 +1,20 @@
+.home-page {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	padding: 251px 165px 131px 110px;
+	box-sizing: border-box;
+}
+
+.home-page__text {
+	max-width: 450px;
+}
+
+.home-page__text > * {
+	margin-bottom: 24px;
+}
+
+.home-page__text > *:last-child {
+	margin-bottom: 0;
+}
