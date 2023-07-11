@@ -5,6 +5,7 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: black;
 }
 
 button {
@@ -30,14 +31,6 @@ ul {
 	margin: 0;
 }
 
-.page-heading {
-	color: #ffffff;
-}
-
-.page-heading > span {
-	opacity: 0.25;
-}
-
 .heading-1 {
 	font-family: 'Bellefair';
 	font-style: normal;
@@ -56,6 +49,26 @@ ul {
 	margin: 0;
 	text-transform: uppercase;
 	font-weight: normal;
+}
+
+.heading-3 {
+	color: #fff;
+	font-family: 'Bellefair';
+	font-size: 56px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+.heading-4 {
+	color: #fff;
+	font-family: 'Bellefair';
+	font-size: 32px;
+	font-style: normal;	
+	font-weight: 400;
+	line-height: normal;
+	text-transform: uppercase;
 }
 
 .subheading-2 {

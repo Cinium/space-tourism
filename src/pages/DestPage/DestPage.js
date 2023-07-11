@@ -1,3 +1,4 @@
+import PageHeading from 'components/page-heading/PageHeading';
 import './DestPage.css';
 import { useState } from 'react';
 
@@ -41,9 +42,11 @@ export default function DestPage() {
 
 	return (
 		<main className='dest-page'>
-			<h2 className='heading-5 page-heading dest_heading'>
-				<span>01</span> Pick your destination
-			</h2>
+			<PageHeading
+				span={'01'}
+				text={'Pick your destination'}
+				classes={'dest_heading'}
+			/>
 
 			<div className='dest-page_content'>
 				<img
@@ -74,7 +77,7 @@ export default function DestPage() {
 						</li>
 						<li
 							className={
-								`dest_list-item` + (planet === 'eurora' ? ' active' : '')
+								`dest_list-item` + (planet === 'europa' ? ' active' : '')
 							}
 						>
 							<button className='nav-text' onClick={hadnleNavClick}>
@@ -98,6 +101,9 @@ export default function DestPage() {
 					<p className='dest_planet-paragraph'>
 						{planetsInfo[planet].decription}
 					</p>
+
+					<div className='dest_divider'></div>
+
 					<div className='dest_travel-info'>
 						<div className='dest_distance-info-block subheading-2'>
 							AVG. DISTANCE

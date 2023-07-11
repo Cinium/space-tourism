@@ -83,6 +83,13 @@
 	margin: 0 0 54px;
 }
 
+.dest_divider {
+	height: 1px;
+	width: 100%;
+	margin-bottom: 28px;
+	background-color: #383B4B;
+}
+
 .dest_travel-info {
 	display: flex;
 	column-gap: 79px;

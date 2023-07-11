@@ -1,0 +1,13 @@
+.dot {
+	margin-right: 24px;
+	width: 15px;
+	height: 15px;
+	background-color: white;
+	opacity: 0.174;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.dot.selected {
+	opacity: 1;
+}

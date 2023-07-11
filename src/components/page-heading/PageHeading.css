@@ -1,0 +1,8 @@
+.page-heading {
+	color: #ffffff;
+}
+
+.page-heading > span {
+	opacity: 0.25;
+	margin-right: 25px;
+}
