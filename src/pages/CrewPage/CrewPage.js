@@ -1,37 +1,29 @@
-import HorizontalSlider from 'components/horizontal-slider/HorizontalSlider';
 import './CrewPage.css';
 import PageHeading from 'components/page-heading/PageHeading';
-import { useState } from 'react';
-import CrewSlide from 'components/horizontal-slider/slides/CrewSlide';
+import CrewSlide from 'components/slides/CrewSlide';
+import { useEffect, useState } from 'react';
+import crewMembers from 'assets/images/crewMembers';
+import Slider from 'components/Slider/Slider';
 
-const memebersInfo = [
-	{
-		name: 'Douglas Hurley',
-		position: 'Commander',
-		description:
-			'Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.',
-	},
-	{
-		name: 'MARK SHUTTLEWORTH',
-		position: 'Mission Specialist',
-		description:
-			'Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.',
-	},
-	{
-		name: 'Victor Glover',
-		position: 'PILOT',
-		description:
-			'Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer. ',
-	},
-	{
-		name: 'Anousheh Ansari',
-		position: 'Flight Engineer',
-		description:
-			'Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space. ',
-	},
-];
+export default function CrewPage({ memebersInfo }) {
+	const [currentSlide, setCurrentSlide] = useState(0);
+	const [imageUrl, setImageUrl] = useState(crewMembers[0]);
+	const [fadeIn, setFadeIn] = useState(false);
+	const [fadeOut, setFadeOut] = useState(false);
 
-export default function CrewPage() {
+	useEffect(() => {
+		setFadeOut(true);
+		setFadeIn(false);
+
+		setTimeout(() => {
+			setImageUrl(crewMembers[currentSlide]);
+		}, 200);
+	}, [currentSlide]);
+
+	useEffect(() => {
+		setFadeOut(false);
+		setFadeIn(true);
+	}, [imageUrl]);
 
 	return (
 		<section className='crew'>
@@ -41,7 +33,19 @@ export default function CrewPage() {
 				classes={'crew__heading'}
 			/>
 
-			<HorizontalSlider data={memebersInfo} slideComponent={CrewSlide} />
+			<Slider
+				direction='horizontal'
+				data={memebersInfo}
+				slideComponent={CrewSlide}
+				getSlide={setCurrentSlide}
+			/>
+			<img
+				src={imageUrl}
+				alt='member'
+				className={`crew__image ${fadeIn ? 'fadeIn' : ''} ${
+					fadeOut ? 'fadeOut' : ''
+				}`}
+			/>
 		</section>
 	);
 }

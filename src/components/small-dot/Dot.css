@@ -6,6 +6,11 @@
 	opacity: 0.174;
 	border-radius: 50%;
 	cursor: pointer;
+	transition: opacity .1s linear;
+}
+
+.dot:hover {
+	opacity: 0.5;
 }
 
 .dot.selected {

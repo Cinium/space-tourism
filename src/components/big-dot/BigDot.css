@@ -1,0 +1,40 @@
+.big-dot {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-bottom: 32px;
+	margin-right: 80px;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: 50%;
+	padding: 1px 0 0 2px;
+	width: 80px;
+	height: 80px;
+
+	font-family: 'Bellefair';
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 2px;
+	box-sizing: border-box;
+
+	color: white;
+	background-color: transparent;
+
+	transition: border 0.1s ease, background-color 0.2s ease, color .3s ease;
+}
+
+.big-dot:last-child {
+	margin-bottom: 0;
+}
+
+.big-dot:hover {
+	cursor: pointer;
+	border-color: #fff;
+}
+
+.big-dot.selected {
+	background-color: white;
+	color: #0b0d17;
+}

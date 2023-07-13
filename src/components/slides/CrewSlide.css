@@ -1,0 +1,18 @@
+.crew-slide__member-position {
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.crew-slide__member-name {
+	margin: 0;
+}
+
+.crew-slide__member-description {
+	color: #d0d6f9;
+	font-family: 'Barlow';
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 32px;
+	max-width: 444px;
+}

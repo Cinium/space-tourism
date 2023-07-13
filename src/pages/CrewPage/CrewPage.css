@@ -6,44 +6,34 @@
 	margin-bottom: 154px;
 }
 
-.crew__member-position {
-	display: inline-block;
-	margin-bottom: 15px;
+.crew__image {
+	position: absolute;
+	bottom: 0;
+	right: 137px;
 }
 
-.crew__member-name {
-	margin: 0;
+.fadeIn {
+	animation: fadeIn .3s linear;
 }
 
-.crew__member-description {
-	color: #d0d6f9;
-	font-family: 'Barlow';
-	font-size: 18px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 32px;
-	max-width: 444px;
-	/* margin-bottom: 120px; */
+.fadeOut {
+	animation: fadeOut .3s linear;
 }
 
-.crew__slider-dots {
-	display: flex;
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
-.crew__slider-dots > div {
-	margin-right: 24px;
-	width: 15px;
-	height: 15px;
-	background-color: white;
-	opacity: 0.174;
-	border-radius: 50%;
-	cursor: pointer;
-}
-
-.crew__slider-dots > div.active {
-	opacity: 1;
-}
-
-.crew__slider-dots > div:last-child {
-	margin-right: 0;
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }

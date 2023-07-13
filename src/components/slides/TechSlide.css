@@ -1,0 +1,21 @@
+.tech-slide__caption {
+	color: #d0d6f9;
+	font-family: 'Barlow Condensed';
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 2.7px;
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 11px;
+}
+
+.tech-slide__term {
+	margin: 0 0 17px;
+}
+
+.tech-slide__definition {
+	max-width: 444px;
+	margin: 0;
+}

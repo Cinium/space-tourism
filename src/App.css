@@ -1,5 +1,6 @@
 .App {
 	padding-top: 50px;
+	position: relative;
 }
 
 .bg-image {
