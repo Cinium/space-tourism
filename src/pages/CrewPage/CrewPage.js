@@ -1,29 +1,13 @@
 import './CrewPage.css';
 import PageHeading from 'components/page-heading/PageHeading';
 import CrewSlide from 'components/slides/CrewSlide';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import crewMembers from 'assets/images/crewMembers';
 import Slider from 'components/Slider/Slider';
+import FadeImage from 'components/fade-image/FadeImage';
 
-export default function CrewPage({ memebersInfo }) {
+export default function CrewPage({ data }) {
 	const [currentSlide, setCurrentSlide] = useState(0);
-	const [imageUrl, setImageUrl] = useState(crewMembers[0]);
-	const [fadeIn, setFadeIn] = useState(false);
-	const [fadeOut, setFadeOut] = useState(false);
-
-	useEffect(() => {
-		setFadeOut(true);
-		setFadeIn(false);
-
-		setTimeout(() => {
-			setImageUrl(crewMembers[currentSlide]);
-		}, 200);
-	}, [currentSlide]);
-
-	useEffect(() => {
-		setFadeOut(false);
-		setFadeIn(true);
-	}, [imageUrl]);
 
 	return (
 		<section className='crew'>
@@ -32,19 +16,16 @@ export default function CrewPage({ memebersInfo }) {
 				text={'Meet your crew'}
 				classes={'crew__heading'}
 			/>
-
 			<Slider
 				direction='horizontal'
-				data={memebersInfo}
+				data={data}
 				slideComponent={CrewSlide}
 				getSlide={setCurrentSlide}
 			/>
-			<img
-				src={imageUrl}
-				alt='member'
-				className={`crew__image ${fadeIn ? 'fadeIn' : ''} ${
-					fadeOut ? 'fadeOut' : ''
-				}`}
+			<FadeImage
+				currentImg={currentSlide}
+				images={crewMembers}
+				classes='crew__image'
 			/>
 		</section>
 	);

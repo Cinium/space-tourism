@@ -5,9 +5,7 @@ export default function HomePage() {
 	return (
 		<main className='home-page'>
 			<div className='home-page__text'>
-				<h5 className='heading-5'>
-					SO, YOU WANT TO TRAVEL TO
-				</h5>
+				<h5 className='heading-5'>SO, YOU WANT TO TRAVEL TO</h5>
 				<h2 className='heading-1'>SPACE</h2>
 				<p className='body-text'>
 					Let's face it; if you want to go to space, you might as well genuinely

@@ -5,3 +5,9 @@
 .tech__heading {
 	margin-bottom: 137px;
 }
+
+.tech__img {
+	position: absolute;
+	right: 0;
+	bottom: 101px;
+}

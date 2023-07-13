@@ -20,3 +20,9 @@
 .bg-image.active {
 	opacity: 1;
 }
+
+@media screen and (max-width: 769px) {
+	.App {
+		padding-top: 0;
+	}
+}

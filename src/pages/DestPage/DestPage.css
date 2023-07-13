@@ -20,7 +20,7 @@
 	list-style: none;
 	color: #fff;
 	font-size: 16px;
-	font-family: Barlow Condensed;
+	font-family: 'Barlow Condensed';
 	letter-spacing: 2.7px;
 	text-transform: uppercase;
 	margin-bottom: 37px;
@@ -87,7 +87,7 @@
 	height: 1px;
 	width: 100%;
 	margin-bottom: 28px;
-	background-color: #383B4B;
+	background-color: #383b4b;
 }
 
 .dest_travel-info {
@@ -101,4 +101,47 @@
 	font-family: 'Bellefair';
 	text-transform: uppercase;
 	margin: 12px 0 0;
+}
+
+@media screen and (max-width: 769px) {
+	.dest-page {
+		padding: 40px 38.5px 62px;
+	}
+
+	.dest-page_content {
+		flex-direction: column;
+	}
+
+	.planet-image {
+		width: 300px;
+		height: 300px;
+		margin-bottom: 53px;
+	}
+
+	.dest_planets {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		max-width: 573px;
+	}
+
+	.dest_nav-list {
+		margin-bottom: 32px;
+	}
+
+	.dest_planet-title {
+		margin-bottom: 8px;
+	}
+
+	.dest_planet-paragraph {
+		text-align: center;
+		font-size: 16px;
+		line-height: 28px; /* 175% */
+		margin-bottom: 49px;
+	}
+
+	.dest_travel-info {
+		text-align: center;
+	}
 }

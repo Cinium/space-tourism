@@ -2,12 +2,12 @@ import './Header.css';
 import logo from '../../assets/images/shared/logo.svg';
 import { NavLink } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ screenWidth }) {
 	return (
 		<header className='header'>
 			<img src={logo} alt='logo' className='header__logo' />
 
-			<div className='nav-line' />
+			{screenWidth > 768 && <div className='nav-line' />}
 
 			<nav className='header-nav'>
 				<ul className='nav-list'>
@@ -15,10 +15,10 @@ export default function Header() {
 						<NavLink
 							to='/'
 							className={({ isActive }) =>
-								'nav-link' + (isActive ? ' nav-link_active' : '')
+								'nav-link' + (isActive ? ' active' : '')
 							}
 						>
-							<span className='nav-num'>00</span>
+							{screenWidth > 768 && <span className='nav-num'>00</span>}
 							HOME
 						</NavLink>
 					</li>
@@ -26,10 +26,10 @@ export default function Header() {
 						<NavLink
 							to='dest'
 							className={({ isActive }) =>
-								'nav-link' + (isActive ? ' nav-link_active' : '')
+								'nav-link' + (isActive ? ' active' : '')
 							}
 						>
-							<span className='nav-num'>01</span>
+							{screenWidth > 768 && <span className='nav-num'>01</span>}
 							DESTINATION
 						</NavLink>
 					</li>
@@ -37,10 +37,10 @@ export default function Header() {
 						<NavLink
 							to='crew'
 							className={({ isActive }) =>
-								'nav-link' + (isActive ? ' nav-link_active' : '')
+								'nav-link' + (isActive ? ' active' : '')
 							}
 						>
-							<span className='nav-num'>02</span>
+							{screenWidth > 768 && <span className='nav-num'>02</span>}
 							CREW
 						</NavLink>
 					</li>
@@ -48,16 +48,15 @@ export default function Header() {
 						<NavLink
 							to='tech'
 							className={({ isActive }) =>
-								'nav-link' + (isActive ? ' nav-link_active' : '')
+								'nav-link' + (isActive ? ' active' : '')
 							}
 						>
-							<span className='nav-num'>03</span>
+							{screenWidth > 768 && <span className='nav-num'>03</span>}
 							TECHNOLOGY
 						</NavLink>
 					</li>
 				</ul>
 			</nav>
-
 		</header>
 	);
 }
