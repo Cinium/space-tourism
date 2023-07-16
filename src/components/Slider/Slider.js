@@ -13,6 +13,45 @@ export default function Slider({
 }) {
 	const [slide, setSlide] = useState(0);
 	const [animation, setAnimation] = useState(false);
+	const [touchPosition, setTouchPosition] = useState(null);
+
+	const changeSlide = (direction = 1) => {
+		let slideNumber = 0;
+
+		if (slide + direction < 0) {
+			slideNumber = data.length - 1;
+		} else {
+			slideNumber = (slide + direction) % data.length;
+		}
+
+		setSlide(slideNumber);
+		if (getSlide) getSlide(slideNumber);
+	};
+
+	const handleTouchStart = e => {
+		const touchDown = e.touches[0].clientX;
+
+		setTouchPosition(touchDown);
+	};
+
+	const handleTouchMove = e => {
+		if (touchPosition === null) {
+			return;
+		}
+
+		const currentPosition = e.touches[0].clientX;
+		const direction = touchPosition - currentPosition;
+
+		if (direction > 10) {
+			changeSlide(1);
+		}
+
+		if (direction < -10) {
+			changeSlide(-1);
+		}
+
+		setTouchPosition(null);
+	};
 
 	const goToSlide = number => {
 		if (slide === number) return;
@@ -34,7 +73,11 @@ export default function Slider({
 	};
 
 	return (
-		<div className={`slider ${direction}-slider`}>
+		<div
+			className={`slider ${direction}-slider`}
+			onTouchStart={handleTouchStart}
+			onTouchMove={handleTouchMove}
+		>
 			{direction === 'vertical' && <Dots {...dotsProps} />}
 
 			<SlidesList

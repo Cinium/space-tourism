@@ -1,11 +1,26 @@
 .slider {
 	display: flex;
 	overflow: hidden;
-
 }
 
 .horizontal-slider {
 	min-height: 406px;
 	flex-direction: column;
 	justify-content: space-between;
+}
+
+@media screen and (max-width: 769px) {
+	.slider {
+		align-items: center;
+	}
+
+	.horizontal-slider {
+		min-height: 232px;
+		row-gap: 40px;
+	}
+
+	.vertical-slider {
+		display: flex;
+		flex-direction: column;
+	}
 }

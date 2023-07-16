@@ -29,6 +29,25 @@
 	}
 }
 
+@media screen and (max-width: 769px) {
+	.crew {
+		padding: 40px 38.5px 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.crew__heading {
+		margin-bottom: 60px;
+	}
+
+	.crew__image {
+		position: static;
+		max-height: 532px;
+		object-fit: contain;
+		margin-top: 40px;
+	}
+}
+
 @keyframes fadeOut {
 	0% {
 		opacity: 1;

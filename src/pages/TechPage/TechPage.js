@@ -9,23 +9,22 @@ import FadeImage from 'components/fade-image/FadeImage';
 export default function TechPage({ data }) {
 	const [currentSlide, setCurrentSlide] = useState(0);
 
-
 	return (
 		<section className='tech-page'>
 			<PageHeading span={'03'} classes={'tech__heading'}>
 				SPACE LAUNCH 101
 			</PageHeading>
+			<FadeImage
+				currentImg={currentSlide}
+				images={techImgs}
+				classes='tech__img'
+			/>
 			<Slider
 				direction='vertical'
 				data={data}
 				slideComponent={TechSlide}
 				height={304}
 				getSlide={setCurrentSlide}
-			/>
-			<FadeImage
-				currentImg={currentSlide}
-				images={techImgs}
-				classes='tech__img'
 			/>
 		</section>
 	);

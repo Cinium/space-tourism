@@ -90,7 +90,7 @@
 	background-color: #383b4b;
 }
 
-.dest_travel-info {
+.dest_info-block {
 	display: flex;
 	column-gap: 79px;
 }
@@ -141,7 +141,13 @@
 		margin-bottom: 49px;
 	}
 
-	.dest_travel-info {
+	.dest_info-block {
 		text-align: center;
+		column-gap: 11px;
+	}
+
+	.dest_info-block > div {
+		flex: 1 1 0;
+		min-width: 216px;
 	}
 }

@@ -11,3 +11,24 @@
 	right: 0;
 	bottom: 101px;
 }
+
+@media screen and (max-width: 769px) {
+	.tech-page {
+		padding: 40px 38.5px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tech__heading {
+		margin-bottom: 60px;
+	}
+	
+	.tech__img {
+		position: static;
+		width: calc(100% + 77px);
+		height: 310px;
+		object-fit: cover;
+		transform: translateX(-38.5px);
+		margin-bottom: 56px;
+	}
+}

@@ -49,12 +49,12 @@ export default function DestPage({ data }) {
 
 					<div className='dest_divider' />
 
-					<div className='dest_travel-info'>
-						<div className='dest_distance-info-block subheading-2'>
+					<div className='dest_info-block'>
+						<div className='dest_info subheading-2'>
 							AVG. DISTANCE
 							<p className='dest_info-text'>{data[planet].distance}</p>
 						</div>
-						<div className='dest_time-info-block subheading-2'>
+						<div className='dest_info subheading-2'>
 							Est. travel time
 							<p className='dest_info-text'>{data[planet].travelTime}</p>
 						</div>

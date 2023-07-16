@@ -8,11 +8,26 @@
 }
 
 .crew-slide__member-description {
-	color: #d0d6f9;
-	font-family: 'Barlow';
-	font-size: 18px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 32px;
 	max-width: 444px;
+}
+
+@media screen and (max-width: 769px) {
+	.crew-slide {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.crew-slide__member-position {
+		margin-bottom: 8px;
+	}
+
+	.crew-slide__member-name {
+		margin: 0 0 16px;
+	}
+
+	.crew-slide__member-description {
+		max-width: 458px;
+		text-align: center;
+	}
 }
