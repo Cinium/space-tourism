@@ -5,9 +5,11 @@ import Slider from 'components/Slider/Slider';
 import { useState } from 'react';
 import techImgs from 'assets/images/techImages';
 import FadeImage from 'components/fade-image/FadeImage';
+import { useSelector } from 'react-redux';
 
 export default function TechPage({ data }) {
 	const [currentSlide, setCurrentSlide] = useState(0);
+	const device = useSelector(state => state.screenSize.device);
 
 	return (
 		<section className='tech-page'>
@@ -16,7 +18,7 @@ export default function TechPage({ data }) {
 			</PageHeading>
 			<FadeImage
 				currentImg={currentSlide}
-				images={techImgs}
+				images={device === 'desktop' ? techImgs.portrait : techImgs.landscape}
 				classes='tech__img'
 			/>
 			<Slider

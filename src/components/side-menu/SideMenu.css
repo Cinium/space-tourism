@@ -1,0 +1,20 @@
+.side-menu {
+	margin: 0;
+	padding: 118px 32px;
+
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 5;
+
+	background: rgba(255, 255, 255, 0.04);
+	backdrop-filter: blur(40.77px);
+	list-style: none;
+
+	transition: right .5s ease;
+}
+
+.side-menu.hidden {
+	right: -100%;
+}

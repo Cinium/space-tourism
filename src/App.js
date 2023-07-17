@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import './App.css';
+import { useDispatch } from 'react-redux';
+import useScreenSize from 'utils/hooks/useScreenSize';
 import Header from './layouts/header/Header';
 import HomePage from 'pages/HomePage/HomePage';
 import DestPage from 'pages/DestPage/DestPage';
-import { bgs } from 'assets/images/bgs';
 import CrewPage from 'pages/CrewPage/CrewPage';
 import TechPage from 'pages/TechPage/TechPage';
+import { bgs } from 'assets/images/bgs';
+import { setDevice, setHeight, setWidth } from 'redux/screenSizeSlice';
+import './App.css';
 
 const memebersInfo = [
 	{
@@ -84,23 +87,28 @@ const planetsInfo = [
 function App() {
 	const location = useLocation();
 	const [background, setBackground] = useState('');
-	const [screenWidth, setScreenWidth] = useState(window.screen.width);
-
-	window.addEventListener('resize', () => {
-		setScreenWidth(window.screen.width);
-	})
+	const { width, height, device } = useScreenSize();
+	const dispatch = useDispatch();
 
 	const renderBG = () => {
-		return bgs
-			.map((bg, i) => (
+		const BGArray = [];
+		for (const bg in bgs[device]) {
+			BGArray.push(
 				<div
 					className={`bg-image ${bg.includes(background) ? 'active' : ''}`}
-					style={{ backgroundImage: `url(${bg})` }}
-					key={i}
+					style={{ backgroundImage: `url(${bgs[device][bg]})` }}
+					key={bg + '-bg'}
 				/>
-			))
-			.reverse();
+			);
+		}
+		return BGArray;
 	};
+
+	useEffect(() => {
+		dispatch(setHeight(height));
+		dispatch(setWidth(width));
+		dispatch(setDevice(device));
+	}, [width, height, device, dispatch]);
 
 	useEffect(() => {
 		switch (location.pathname) {
@@ -116,7 +124,7 @@ function App() {
 	return (
 		<div className='App'>
 			{renderBG()}
-			<Header screenWidth={screenWidth} />
+			<Header />
 
 			<Routes>
 				<Route exact path='/' element={<HomePage />} />

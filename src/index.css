@@ -149,3 +149,32 @@ ul {
 		line-height: 28px;
 	}
 }
+
+@media screen and (max-width: 400px) {
+	.heading-1 {
+		font-size: 80px;
+		line-height: 100px;
+	}
+
+	.heading-2 {
+	}
+
+	.heading-3 {
+	}
+
+	.heading-4 {
+	}
+
+	.heading-5 {
+		font-size: 16px;
+		letter-spacing: 2.7px;
+	}
+
+	.paragraph {
+	}
+
+	.body-text {
+		font-size: 15px;
+		line-height: 25px;
+	}
+}

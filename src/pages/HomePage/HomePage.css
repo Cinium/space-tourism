@@ -82,3 +82,13 @@
 		margin-bottom: 156px;
 	}
 }
+
+@media screen and (max-width: 400px) {
+	.home-page {
+		padding: 24px 24px 48px;
+		width: 100vw;
+	}
+
+	.home-page__text {
+	}
+}
