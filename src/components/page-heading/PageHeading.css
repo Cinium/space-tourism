@@ -5,4 +5,16 @@
 .page-heading > span {
 	opacity: 0.25;
 	margin-right: 25px;
+	font-weight: 700;
+
+}
+
+@media screen and (max-width: 400px) {
+	.page-heading {
+		text-align: center;
+	}
+
+	.page-heading > span {
+		margin-right: 16px;
+	}
 }

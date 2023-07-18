@@ -2,11 +2,11 @@
 	padding: 76px 163px 118px 166.5px;
 }
 
-.dest_heading {
+.dest__heading {
 	margin-bottom: 64px;
 }
 
-.dest-page_content {
+.dest-page__content {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -16,7 +16,7 @@
 	max-width: 444px;
 }
 
-.dest_nav-list {
+.dest-page__nav-list {
 	list-style: none;
 	color: #fff;
 	font-size: 16px;
@@ -71,11 +71,11 @@
 	opacity: 1;
 }
 
-.dest_planet-title {
+.dest-page__planet-title {
 	margin-bottom: 14px;
 }
 
-.dest_planet-paragraph {
+.dest-page__planet-description {
 	color: #d0d6f9;
 	font-size: 18px;
 	font-family: 'Barlow';
@@ -83,19 +83,19 @@
 	margin: 0 0 54px;
 }
 
-.dest_divider {
+.dest-page___divider {
 	height: 1px;
 	width: 100%;
 	margin-bottom: 28px;
 	background-color: #383b4b;
 }
 
-.dest_info-block {
+.dest-page__info-block {
 	display: flex;
 	column-gap: 79px;
 }
 
-.dest_info-text {
+.dest-page__info-text {
 	color: #fff;
 	font-size: 28px;
 	font-family: 'Bellefair';
@@ -108,7 +108,7 @@
 		padding: 40px 38.5px 62px;
 	}
 
-	.dest-page_content {
+	.dest-page__content {
 		flex-direction: column;
 	}
 
@@ -118,7 +118,7 @@
 		margin-bottom: 53px;
 	}
 
-	.dest_planets {
+	.dest-page__planets {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -126,28 +126,78 @@
 		max-width: 573px;
 	}
 
-	.dest_nav-list {
+	.dest-page__nav-list {
 		margin-bottom: 32px;
 	}
 
-	.dest_planet-title {
+	.dest-page__planet-title {
 		margin-bottom: 8px;
 	}
 
-	.dest_planet-paragraph {
+	.dest-page__planet-description {
 		text-align: center;
 		font-size: 16px;
 		line-height: 28px; /* 175% */
 		margin-bottom: 49px;
 	}
 
-	.dest_info-block {
+	.dest-page__info-block {
 		text-align: center;
 		column-gap: 11px;
 	}
 
-	.dest_info-block > div {
+	.dest-page__info-block > div {
 		flex: 1 1 0;
 		min-width: 216px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.dest-page {
+		padding: 24px 24px 58px;
+	}
+
+	.dest__heading {
+		margin-bottom: 32px;
+	}
+
+	.dest-page__planets {
+		max-width: 100%;
+	}
+
+	.planet-image {
+		width: 170px;
+		height: 170px;
+		margin-bottom: 26px;
+	}
+
+	.dest-page__nav-list {
+		margin-bottom: 20px;
+		font-size: 14px;
+		line-height: 17px;
+	}
+
+	.dest-page__planet-title {
+		margin-bottom: 1px;
+	}
+
+	.dest-page__planet-description {
+		font-size: 15px;
+		line-height: 25px;
+		margin-bottom: 32px;
+	}
+
+	.dest-page___divider {
+		margin-bottom: 32px;
+	}
+
+	.dest-page__info-block {
+		flex-direction: column;
+		min-height: 154px;
+		justify-content: space-between;
+	}
+	
+	.dest-page__info-block > div {
+		flex: none;
 	}
 }

@@ -24,3 +24,9 @@
 		flex-direction: column;
 	}
 }
+
+@media screen and (max-width: 769px) {
+	.horizontal-slider {
+		row-gap: 32px;
+	}
+}

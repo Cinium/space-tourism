@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './BurgerButton.css';
 import SideMenu from 'components/side-menu/SideMenu';
+import { useLocation } from 'react-router-dom';
 
-export default function BurgerButton() {
+export default function BurgerButton({ sideMenuLinks }) {
 	const [isClicked, setIsClicked] = useState(false);
+	const location = useLocation();
+
+	useEffect(() => {
+		setIsClicked(false);
+	}, [location]);
 
 	return (
 		<>
@@ -44,7 +50,11 @@ export default function BurgerButton() {
 					}`}
 				/>
 			</div>
-			<SideMenu isOpen={isClicked} />
+			<SideMenu
+				isOpen={isClicked}
+				setIsOpen={setIsClicked}
+				links={sideMenuLinks}
+			/>
 		</>
 	);
 }

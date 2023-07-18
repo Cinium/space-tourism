@@ -27,6 +27,7 @@
 
 .big-dot:last-child {
 	margin-bottom: 0;
+	margin-right: 0;
 }
 
 .big-dot:hover {
@@ -48,5 +49,14 @@
 		height: 60px;
 
 		font-size: 24px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.big-dot {
+		width: 40px;
+		height: 40px;
+		font-size: 16px;
+		margin-bottom: 26px;
 	}
 }

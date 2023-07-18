@@ -157,12 +157,16 @@ ul {
 	}
 
 	.heading-2 {
+		font-size: 56px;
 	}
 
 	.heading-3 {
+		font-size: 24px;
+		line-height: 28px;
 	}
 
 	.heading-4 {
+		font-size: 16px;
 	}
 
 	.heading-5 {
@@ -171,6 +175,7 @@ ul {
 	}
 
 	.paragraph {
+		font-size: 15px;
 	}
 
 	.body-text {

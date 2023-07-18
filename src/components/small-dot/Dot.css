@@ -6,7 +6,7 @@
 	opacity: 0.174;
 	border-radius: 50%;
 	cursor: pointer;
-	transition: opacity .1s linear;
+	transition: opacity 0.1s linear;
 }
 
 .dot:hover {
@@ -15,4 +15,11 @@
 
 .dot.selected {
 	opacity: 1;
+}
+
+@media screen and (max-width: 400px) {
+	.dot {
+		width: 10px;
+		height: 10px;
+	}
 }

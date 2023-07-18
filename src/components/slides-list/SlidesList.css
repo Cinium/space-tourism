@@ -12,3 +12,9 @@
 .fade-animation {
 	animation: fade 0.5s;
 }
+
+@media screen and (max-width: 400px) {
+	.slides-list {
+		text-align: center;
+	}
+}

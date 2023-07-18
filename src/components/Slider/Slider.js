@@ -2,6 +2,7 @@ import './Slider.css';
 import { useState } from 'react';
 import SlidesList from '../slides-list/SlidesList';
 import Dots from '../dots/Dots';
+import { useSelector } from 'react-redux';
 
 export default function Slider({
 	direction,
@@ -14,6 +15,7 @@ export default function Slider({
 	const [slide, setSlide] = useState(0);
 	const [animation, setAnimation] = useState(false);
 	const [touchPosition, setTouchPosition] = useState(null);
+	const device = useSelector(state => state.screenSize.device);
 
 	const changeSlide = (direction = 1) => {
 		let slideNumber = 0;
@@ -78,7 +80,9 @@ export default function Slider({
 			onTouchStart={handleTouchStart}
 			onTouchMove={handleTouchMove}
 		>
-			{direction === 'vertical' && <Dots {...dotsProps} />}
+			{(direction === 'vertical' || device === 'mobile') && (
+				<Dots {...dotsProps} />
+			)}
 
 			<SlidesList
 				direction={direction}
@@ -90,7 +94,9 @@ export default function Slider({
 				height={height}
 			/>
 
-			{direction === 'horizontal' && <Dots {...dotsProps} />}
+			{direction === 'horizontal' && device !== 'mobile' && (
+				<Dots {...dotsProps} />
+			)}
 		</div>
 	);
 }

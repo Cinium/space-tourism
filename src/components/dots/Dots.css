@@ -1,10 +1,16 @@
 .dots {
 	display: flex;
-	z-index: 10;
+	z-index: 3;
 }
 
 @media screen and (max-width: 769px) {
 	.dots {
 		flex-direction: row !important;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.dots {
+		margin-top: 32px;
 	}
 }

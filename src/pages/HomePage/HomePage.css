@@ -90,5 +90,18 @@
 	}
 
 	.home-page__text {
+		margin-bottom: 81px;
+	}
+
+	.main-button {
+		width: 150px;
+		height: 150px;
+		font-size: 20px;
+		letter-spacing: 1.25px;
+
+	}
+
+	.home-page__heading {
+		margin-bottom: 16px;
 	}
 }

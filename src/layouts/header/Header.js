@@ -5,88 +5,57 @@ import { useSelector } from 'react-redux';
 import BurgerButton from 'components/burger/BurgerButton';
 
 export default function Header() {
-	const screenWidth = useSelector(state => state.screenSize.width);
+	const device = useSelector(state => state.screenSize.device);
 
 	const linksData = [
 		{
-			span: '00',
-			textContent: `{screenWidth > 768 && <span className='nav-num'>00</span>}HOME`,
+			textContent: `HOME`,
 			to: '/',
 		},
 		{
-			span: '01',
-			textContent: `{screenWidth > 768 && <span className='nav-num'>01</span>}DESTINATION`,
+			textContent: `DESTINATION`,
 			to: '/dest',
 		},
 		{
-			span: '02',
-			textContent: `{screenWidth > 768 && <span className='nav-num'>02</span>}CREW`,
+			textContent: `CREW`,
 			to: '/crew',
 		},
 		{
-			span: '03',
-			textContent: `{screenWidth > 768 && <span className='nav-num'>03</span>}TECHNOLOGY`,
+			textContent: `TECHNOLOGY`,
 			to: '/tech',
 		},
 	];
+
+	const renderUL = () => {
+		return linksData.map((link, i) => (
+			<li className='nav-item' key={i}>
+				<NavLink
+					to={link.to}
+					className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}
+				>
+					{device !== 'tablet' && (
+						<span className='nav-num'>{String(i).padStart(2, '0')}</span>
+					)}
+					{link.textContent}
+				</NavLink>
+			</li>
+		));
+	};
 
 	return (
 		<header className='header'>
 			<img src={logo} alt='logo' className='header__logo' />
 
-			{screenWidth > 768 && <div className='nav-line' />}
+			{device === 'desktop' && <div className='nav-line' />}
 
-			{screenWidth > 768 ? (
+			{device !== 'mobile' ? (
 				<nav className='header-nav'>
 					<ul className='nav-list'>
-						<li className='nav-item'>
-							<NavLink
-								to='/'
-								className={({ isActive }) =>
-									'nav-link' + (isActive ? ' active' : '')
-								}
-							>
-								{screenWidth > 768 && <span className='nav-num'>00</span>}
-								HOME
-							</NavLink>
-						</li>
-						<li className='nav-item'>
-							<NavLink
-								to='dest'
-								className={({ isActive }) =>
-									'nav-link' + (isActive ? ' active' : '')
-								}
-							>
-								{screenWidth > 768 && <span className='nav-num'>01</span>}
-								DESTINATION
-							</NavLink>
-						</li>
-						<li className='nav-item'>
-							<NavLink
-								to='crew'
-								className={({ isActive }) =>
-									'nav-link' + (isActive ? ' active' : '')
-								}
-							>
-								{screenWidth > 768 && <span className='nav-num'>02</span>}
-								CREW
-							</NavLink>
-						</li>
-						<li className='nav-item'>
-							<NavLink
-								to='tech'
-								className={({ isActive }) =>
-									'nav-link' + (isActive ? ' active' : '')
-								}
-							>
-								{screenWidth > 768 && <span className='nav-num'>03</span>}
-								TECHNOLOGY
-							</NavLink>
-						</li>
+						{ renderUL() }
 					</ul>
 				</nav>
 			) : (
-				<BurgerButton />
+				<BurgerButton sideMenuLinks={linksData} />
 			)}
 		</header>
 	);

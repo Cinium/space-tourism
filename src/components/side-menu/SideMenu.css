@@ -1,6 +1,8 @@
 .side-menu {
+	min-width: 67.7vw;
 	margin: 0;
 	padding: 118px 32px;
+	box-sizing: border-box;
 
 	position: fixed;
 	right: 0;
@@ -12,9 +14,49 @@
 	backdrop-filter: blur(40.77px);
 	list-style: none;
 
-	transition: right .5s ease;
+	transition: right 0.4s ease;
 }
 
 .side-menu.hidden {
 	right: -100%;
+}
+
+.side-menu__item {
+	margin-bottom: 32px;
+}
+
+.side-menu__link {
+	text-decoration: none;
+	color: #fff;
+	font-family: 'Barlow Condensed';
+	font-size: 16px;
+	letter-spacing: 2.7px;
+	line-height: 19px;
+	position: relative;
+}
+
+.side-menu__link.active::after {
+	content: '';
+	width: 4px;
+	height: 31px;
+	background-color: #fff;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 57.995vw;
+}
+
+.side-menu__link > span {
+	display: inline-block;
+	font-weight: 700;
+	min-width: 20px;
+	margin-right: 11px;
+}
+
+.side-menu__back {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 }
