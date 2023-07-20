@@ -12,6 +12,10 @@
 	align-items: center;
 }
 
+.planet-image {
+	margin-right: 157px;
+}
+
 .dest_planets {
 	max-width: 444px;
 }
@@ -81,6 +85,7 @@
 	font-family: 'Barlow';
 	line-height: 32px;
 	margin: 0 0 54px;
+	max-width: 444px;
 }
 
 .dest-page___divider {
@@ -116,6 +121,7 @@
 		width: 300px;
 		height: 300px;
 		margin-bottom: 53px;
+		margin-right: 0;
 	}
 
 	.dest-page__planets {

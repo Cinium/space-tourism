@@ -1,30 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import './FadeImage.css'
 
-export default function FadeImage({images, currentImg, classes, alt}) {
+export default function FadeImage({ images, currentImg, classes, alt }) {
 	const [imageUrl, setImageUrl] = useState(images[0]);
-	const [fadeIn, setFadeIn] = useState(false);
-	const [fadeOut, setFadeOut] = useState(false);
+	const [animation, setAnimation] = useState({ fadeIn: false, fadeOut: false });
+	const [isInitial, setIsInitial] = useState(true);
 
 	useEffect(() => {
-		setFadeOut(true);
-		setFadeIn(false);
+		if (isInitial) {
+			setAnimation({ fadeIn: true, fadeOut: false });
+			setIsInitial(false);
+		} else {
+			setAnimation({ fadeIn: false, fadeOut: true });
 
-		setTimeout(() => {
-			setImageUrl(images[currentImg]);
-		}, 200);
+			setTimeout(() => {
+				setImageUrl(images[currentImg]);
+			}, 250);
+
+			setTimeout(() => {
+				setAnimation({ fadeIn: true, fadeOut: false });
+			}, 250);
+		}
 	}, [currentImg, images]);
-
-	useEffect(() => {
-		setFadeOut(false);
-		setFadeIn(true);
-	}, [imageUrl]);
 
 	return (
 		<img
 			src={imageUrl}
 			alt={alt}
-			className={`${classes} ${fadeIn ? 'fadeIn' : ''} ${
-				fadeOut ? 'fadeOut' : ''
+			className={`${classes} ${animation.fadeIn ? 'fadeIn' : ''} ${
+				animation.fadeOut ? 'fadeOut' : ''
 			}`}
 		/>
 	);
