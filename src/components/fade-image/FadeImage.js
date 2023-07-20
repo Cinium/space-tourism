@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './FadeImage.css'
+import './FadeImage.css';
 
 export default function FadeImage({ images, currentImg, classes, alt }) {
 	const [imageUrl, setImageUrl] = useState(images[0]);
@@ -15,14 +15,15 @@ export default function FadeImage({ images, currentImg, classes, alt }) {
 
 			setTimeout(() => {
 				setImageUrl(images[currentImg]);
-			}, 250);
-
-			setTimeout(() => {
-				setAnimation({ fadeIn: true, fadeOut: false });
-			}, 250);
+			}, 300);
 		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentImg, images]);
+
+	useEffect(() => {
+		if (!isInitial) setAnimation({ fadeIn: true, fadeOut: false });
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [imageUrl]);
 
 	return (
 		<img
