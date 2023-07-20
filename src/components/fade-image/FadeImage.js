@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './FadeImage.css'
 
 export default function FadeImage({ images, currentImg, classes, alt }) {
@@ -21,6 +21,7 @@ export default function FadeImage({ images, currentImg, classes, alt }) {
 				setAnimation({ fadeIn: true, fadeOut: false });
 			}, 250);
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentImg, images]);
 
 	return (
