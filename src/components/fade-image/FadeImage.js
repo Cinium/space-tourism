@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './FadeImage.css';
 
 export default function FadeImage({ images, currentImg, classes, alt }) {
-	const [imageUrl, setImageUrl] = useState(images[0]);
 	const [animation, setAnimation] = useState({ fadeIn: false, fadeOut: false });
 	const [isInitial, setIsInitial] = useState(true);
+	const ref = useRef();
 
 	useEffect(() => {
 		if (isInitial) {
@@ -14,29 +14,19 @@ export default function FadeImage({ images, currentImg, classes, alt }) {
 		} else {
 			setAnimation({ fadeIn: false, fadeOut: true });
 
-			// setTimeout(() => {
-			// 	setImageUrl(images[currentImg]);
-			// }, 300);
+			setTimeout(() => {
+				ref.current.src = images[currentImg];
+				setAnimation({ fadeIn: true, fadeOut: false });
+			}, 300);
 		}
 	}, [currentImg, images]);
 
-	useEffect(() => {
-		if (!isInitial && animation.fadeOut) {
-			setTimeout(() => {
-				setImageUrl(images[currentImg]);
-			}, 400);
-		}
-	}, [animation]);
-
-	useEffect(() => {
-		if (!isInitial) setAnimation({ fadeIn: true, fadeOut: false });
-	}, [imageUrl]);
-
 	return (
 		<img
-			src={imageUrl}
+			ref={ref}
+			src={images[0]}
 			alt={alt}
-			className={`${classes} ${animation.fadeIn ? 'fadeIn' : ''} ${
+			className={`fade-img ${classes} ${animation.fadeIn ? 'fadeIn' : ''} ${
 				animation.fadeOut ? 'fadeOut' : ''
 			}`}
 		/>
