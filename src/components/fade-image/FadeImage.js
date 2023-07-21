@@ -7,6 +7,10 @@ export default function FadeImage({ images, currentImg, classes, alt }) {
 	const [isInitial, setIsInitial] = useState(true);
 	const ref = useRef();
 
+	const onLoad = () => {
+		setAnimation({ fadeIn: true, fadeOut: false });
+	}
+
 	useEffect(() => {
 		if (isInitial) {
 			setAnimation({ fadeIn: true, fadeOut: false });
@@ -16,7 +20,6 @@ export default function FadeImage({ images, currentImg, classes, alt }) {
 
 			setTimeout(() => {
 				ref.current.src = images[currentImg];
-				setAnimation({ fadeIn: true, fadeOut: false });
 			}, 300);
 		}
 	}, [currentImg, images]);
@@ -26,6 +29,7 @@ export default function FadeImage({ images, currentImg, classes, alt }) {
 			ref={ref}
 			src={images[0]}
 			alt={alt}
+			onLoad={onLoad}
 			className={`fade-img ${classes} ${animation.fadeIn ? 'fadeIn' : ''} ${
 				animation.fadeOut ? 'fadeOut' : ''
 			}`}
