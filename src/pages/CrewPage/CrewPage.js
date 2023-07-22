@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 export default function CrewPage({ data }) {
 	const [currentSlide, setCurrentSlide] = useState(0);
-	const device = useSelector(state => state.screenSize.device);
+	const width = useSelector(state => state.screenSize.width);
 
 	const renderImage = () => (
 		<FadeImage
@@ -24,7 +24,7 @@ export default function CrewPage({ data }) {
 				text={'Meet your crew'}
 				classes={'crew__heading'}
 			/>
-			{device === 'mobile' && renderImage()}
+			{width < 1350 && renderImage()}
 
 			<Slider
 				direction='horizontal'
@@ -33,7 +33,7 @@ export default function CrewPage({ data }) {
 				getSlide={setCurrentSlide}
 			/>
 
-			{device !== 'mobile' && renderImage()}
+			{width > 1350 && renderImage()}
 		</section>
 	);
 }

@@ -1,15 +1,22 @@
 .dots {
-	display: flex;
+	display: inline-flex;
 	z-index: 3;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1200px) {
 	.dots {
+		/* align-self: flex-start; */
 		flex-direction: row !important;
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 770px) {
+	.dots {
+		align-self: center;
+	}
+}
+
+@media screen and (max-width: 580px) {
 	.dots {
 		margin-top: 32px;
 	}

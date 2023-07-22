@@ -20,7 +20,7 @@
 	margin: 0;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1200px) {
 	.tech-slide {
 		display: flex;
 		flex-direction: column;

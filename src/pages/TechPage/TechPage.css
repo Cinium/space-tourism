@@ -12,11 +12,29 @@
 	bottom: 101px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1300px) {
 	.tech-page {
-		padding: 40px 38.5px;
 		display: flex;
 		flex-direction: column;
+	}
+	.tech__img {
+		position: static;
+		height: 310px;
+		width: 700px;
+		object-fit: cover;
+		margin-bottom: 56px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.tech__img {
+		align-self: center;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.tech-page {
+		padding: 40px 38.5px;
 	}
 
 	.tech__heading {
@@ -25,15 +43,14 @@
 	
 	.tech__img {
 		position: static;
-		width: calc(100% + 77px);
+		width: calc(100vw + 10px);
 		height: 310px;
 		object-fit: cover;
-		transform: translateX(-38.5px);
 		margin-bottom: 56px;
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 580px) {
 	.tech-page {
 		padding: 24px 24px 81px;
 	}
@@ -45,7 +62,5 @@
 	.tech__img {
 		height: 171px;
 		margin-bottom: 0;
-		width: calc(100% + 48px);
-		transform: translateX(-24px);
 	}
 }

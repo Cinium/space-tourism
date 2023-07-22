@@ -11,7 +11,7 @@
 	max-width: 444px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1200px) {
 	.crew-slide {
 		display: flex;
 		flex-direction: column;
@@ -30,8 +30,4 @@
 		max-width: 458px;
 		text-align: center;
 	}
-}
-
-@media screen and (max-width: 769px) {
-	
 }

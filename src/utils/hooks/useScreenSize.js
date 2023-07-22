@@ -13,8 +13,8 @@ export default function useScreenSize() {
 			setWidth(w);
 			setHeight(h);
 
-			if (w > 768) setDevice('desktop');
-			else if (w > 400) setDevice('tablet');
+			if (w > 1000) setDevice('desktop');
+			else if (w > 580) setDevice('tablet');
 			else setDevice('mobile');
 		}
 

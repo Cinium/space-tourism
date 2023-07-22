@@ -101,18 +101,6 @@ ul {
 	margin: 0;
 }
 
-@keyframes fade {
-	0% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 @media screen and (max-width: 769px) {
 	.heading-1 {
 		line-height: 150px;
@@ -150,7 +138,7 @@ ul {
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 580px) {
 	.heading-1 {
 		font-size: 80px;
 		line-height: 100px;

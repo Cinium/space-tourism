@@ -9,7 +9,7 @@
 	justify-content: space-between;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1200px) {
 	.slider {
 		align-items: center;
 	}
@@ -17,6 +17,7 @@
 	.horizontal-slider {
 		min-height: 232px;
 		row-gap: 40px;
+		align-items: center;
 	}
 
 	.vertical-slider {
