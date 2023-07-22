@@ -1,5 +1,5 @@
 import './Header.css';
-import logo from '../../assets/images/shared/logo.svg';
+import logo from 'assets/images/shared/logo.svg';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import BurgerButton from 'components/burger/BurgerButton';
@@ -50,9 +50,7 @@ export default function Header() {
 
 			{device !== 'mobile' ? (
 				<nav className='header-nav'>
-					<ul className='nav-list'>
-						{ renderUL() }
-					</ul>
+					<ul className='nav-list'>{renderUL()}</ul>
 				</nav>
 			) : (
 				<BurgerButton sideMenuLinks={linksData} />
