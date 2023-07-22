@@ -2,12 +2,15 @@
 
 Небольшое SPA о космическом туризме.
 
+![preview](/gh-assets/preview.jpg)
+
 ### В проекте использованы:
 
 - React
 - Капелька Redux
 - Внешнее API на базе Express
 - Роутинг с помощью react-router-dom
+- Макет в Figma
 - Никаких лишних библиотек
 
 ### В планах:
@@ -39,4 +42,6 @@ ___
 ### Проект хостится на [Netlify](https://ciniums-space-tourism.netlify.app/)
 
 ### API к нему находится на [render.com](https://space-tourism-api.onrender.com)
+
+### Фигмовский макет можно найти [тут](/gh-assets/space-tourism-website.fig)
 
