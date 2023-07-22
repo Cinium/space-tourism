@@ -2,7 +2,6 @@ import './CrewPage.css';
 import PageHeading from 'components/page-heading/PageHeading';
 import CrewSlide from 'components/slides/CrewSlide';
 import { useState } from 'react';
-import crewMembers from 'assets/images/crewMembers';
 import Slider from 'components/Slider/Slider';
 import FadeImage from 'components/fade-image/FadeImage';
 import { useSelector } from 'react-redux';
@@ -13,8 +12,7 @@ export default function CrewPage({ data }) {
 
 	const renderImage = () => (
 		<FadeImage
-			currentImg={currentSlide}
-			images={crewMembers}
+			imgSrc={data[currentSlide]?.link}
 			classes='crew__image'
 		/>
 	);
@@ -30,7 +28,7 @@ export default function CrewPage({ data }) {
 
 			<Slider
 				direction='horizontal'
-				data={data}
+				data={data && data}
 				slideComponent={CrewSlide}
 				getSlide={setCurrentSlide}
 			/>

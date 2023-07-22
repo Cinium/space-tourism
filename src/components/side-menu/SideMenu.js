@@ -21,7 +21,13 @@ export default function SideMenu({ isOpen, setIsOpen, links }) {
 					</li>
 				))}
 			</menu>
-			<div className='side-menu__back' onClick={() => setIsOpen(!isOpen)} />
+			<div
+				className='side-menu__back'
+				onClick={() => setIsOpen(!isOpen)}
+				style={{
+					display: !isOpen ? 'none' : 'block',
+				}}
+			/>
 		</>
 	);
 }

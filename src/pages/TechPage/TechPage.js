@@ -3,7 +3,6 @@ import './TechPage.css';
 import TechSlide from 'components/slides/TechSlide';
 import Slider from 'components/Slider/Slider';
 import { useState } from 'react';
-import techImgs from 'assets/images/techImages';
 import FadeImage from 'components/fade-image/FadeImage';
 import { useSelector } from 'react-redux';
 
@@ -17,8 +16,11 @@ export default function TechPage({ data }) {
 				SPACE LAUNCH 101
 			</PageHeading>
 			<FadeImage
-				currentImg={currentSlide}
-				images={device === 'desktop' ? techImgs.portrait : techImgs.landscape}
+				imgSrc={
+					data[currentSlide]?.links[
+						device === 'desktop' ? 'portrait' : 'landscape'
+					]
+				}
 				classes='tech__img'
 			/>
 			<Slider
